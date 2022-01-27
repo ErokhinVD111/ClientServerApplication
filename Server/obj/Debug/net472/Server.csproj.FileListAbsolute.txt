@@ -1,0 +1,10 @@
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\bin\Debug\net472\Server.exe.config
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\bin\Debug\net472\Server.exe
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\bin\Debug\net472\Server.pdb
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.csproj.AssemblyReference.cache
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.AssemblyInfoInputs.cache
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.AssemblyInfo.cs
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.csproj.CoreCompileInputs.cache
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.exe
+C:\Users\L1der\RiderProjects\ClientServerApplication\Server\obj\Debug\net472\Server.pdb

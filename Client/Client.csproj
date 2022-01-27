@@ -6,4 +6,8 @@
         <LangVersion>8</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Connection\Connection.csproj" />
+    </ItemGroup>
+
 </Project>

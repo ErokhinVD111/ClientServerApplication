@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v5.0": {}
+    ".NETCoreApp,Version=v5.0": {
+      "Connection/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Connection.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Connection.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Connection/1.0.0": {
+      "type": "project",
+      "path": "../Connection/Connection.csproj",
+      "msbuildProject": "../Connection/Connection.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v5.0": []
+    ".NETCoreApp,Version=v5.0": [
+      "Connection >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\L1der\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\ClientServerApplication\\ClientServerApplication.csproj",
-      "projectName": "ClientServerApplication",
-      "projectPath": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\ClientServerApplication\\ClientServerApplication.csproj",
+      "projectUniqueName": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\Server\\Server.csproj",
+      "projectName": "Server",
+      "projectPath": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\L1der\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\ClientServerApplication\\obj\\",
+      "outputPath": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\L1der\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp5.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\Connection\\Connection.csproj": {
+              "projectPath": "C:\\Users\\L1der\\RiderProjects\\ClientServerApplication\\Connection\\Connection.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
