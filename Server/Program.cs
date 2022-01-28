@@ -6,9 +6,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            TCPConnector connector = new TCPConnector();
-            TCPListener listener = new TCPListener();
-            listener.Listen(connector.tcpSocket);
+            Server server = new Server();
+            server.Run();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Client
 {
     public class TCPAcceptor
     {
-        StringBuilder answer = new StringBuilder();
+        private StringBuilder answer = new StringBuilder();
         public void AcceptAnswerFromServer(Socket tcpSocket)
         {
             var buffer = new byte[256];

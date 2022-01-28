@@ -8,12 +8,9 @@ namespace Client
         {
             while (true)
             {
-                TCPConnector connector = new TCPConnector();
-                TCPRequest request = new TCPRequest();
-                TCPAcceptor acceptor = new TCPAcceptor();
-
-                request.SendRequestToServer(connector.tcpSocket, connector.tcpEndPoint);
-                acceptor.AcceptAnswerFromServer(connector.tcpSocket);
+                Client client = new Client();
+                client.SendRequest();
+                client.AcceptAnswer();
             }
         }
     }
