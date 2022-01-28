@@ -4,9 +4,19 @@ using System.Text;
 
 namespace Client
 {
+    /// <summary>
+    /// Класс для принятия ответа от сервера
+    /// </summary>
     public class TCPAcceptor
     {
+        /// <summary>
+        /// После для ответа от сервера
+        /// </summary>
         private StringBuilder answer = new StringBuilder();
+        /// <summary>
+        /// Метод для принятия и обработки ответа от сервера
+        /// </summary>
+        /// <param name="tcpSocket"></param>
         public void AcceptAnswerFromServer(Socket tcpSocket)
         {
             var buffer = new byte[256];
@@ -20,7 +30,10 @@ namespace Client
             tcpSocket.Shutdown(SocketShutdown.Both);
             tcpSocket.Close();
         }
-
+        /// <summary>
+        /// Метод для вывода на консоль ответа от сервера
+        /// </summary>
+        /// <param name="message"></param>
         public void PrintAnswer(StringBuilder message)
         {
             Console.WriteLine("Answer from server: {0}", message);

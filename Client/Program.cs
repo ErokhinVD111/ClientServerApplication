@@ -10,7 +10,7 @@ namespace Client
             {
                 Client client = new Client();
                 client.SendRequest();
-                client.AcceptAnswer();
+                client.AcceptAnswerAsync();
             }
         }
     }
