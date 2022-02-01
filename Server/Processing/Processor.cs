@@ -29,11 +29,11 @@ namespace Server.Processing
         {
             if (isPalendrom)
             {
-                listener.Send(Encoding.UTF8.GetBytes($"в файле {_dataFromClient} палендром"));
+                listener.Send(Encoding.UTF8.GetBytes($"в файле {_dataFromClient} палиндром"));
             }
             else
             {
-                listener.Send(Encoding.UTF8.GetBytes($"в файле {_dataFromClient} не палендром"));
+                listener.Send(Encoding.UTF8.GetBytes($"в файле {_dataFromClient} не палиндром"));
             }
 
             listener.Shutdown(SocketShutdown.Both);

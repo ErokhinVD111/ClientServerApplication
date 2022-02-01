@@ -8,7 +8,7 @@ namespace Client
     /// <summary>
     /// Класс для подключения клиента по протоколу TCP
     /// </summary>
-    public class TCPConnector : ConnectionClientServer
+    public class TCPConnector : BaseConnectionClientServer
     {
         
     }

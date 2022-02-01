@@ -4,9 +4,9 @@ using System.Net.Sockets;
 namespace Connection
 {
     /// <summary>
-    /// Общий класс для подключения по протоколу TCP
+    /// Базовый класс для подключения по протоколу TCP
     /// </summary>
-    public abstract class ConnectionClientServer
+    public abstract class BaseConnectionClientServer
     {
         protected const string ip = "127.0.0.1";
         protected const int port = 8080;
