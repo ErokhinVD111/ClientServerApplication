@@ -7,7 +7,7 @@ namespace Server
     /// <summary>
     /// Класс для подключения сервера по протоколу TCP
     /// </summary>
-    public class TCPConnector : BaseConnectionClientServer
+    public class TCPConnector : BaseConnector
     {
         public TCPConnector()
         {
