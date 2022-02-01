@@ -9,7 +9,7 @@ namespace Client
             while (true)
             {
                 Client client = new Client();
-                client.SendRequest();
+                client.SendRequest(); 
                 client.AcceptAnswerAsync();
             }
         }

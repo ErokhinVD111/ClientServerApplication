@@ -36,7 +36,7 @@ namespace Client
         /// <param name="message"></param>
         public void PrintAnswer(StringBuilder message)
         {
-            Console.WriteLine("Answer from server: {0}", message);
+            Console.WriteLine("Ответ от сервера: {0}", message);
         }
     }
 }

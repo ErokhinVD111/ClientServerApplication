@@ -17,7 +17,7 @@ namespace Client
         /// <param name="tcpEndPoint"></param>
         public void SendRequestToServer(Socket tcpSocket, IPEndPoint tcpEndPoint)
         {
-            Console.WriteLine("Enter your message to server:");
+            Console.WriteLine("Введите путь до файла:");
             var message = Console.ReadLine();
             var data = Encoding.UTF8.GetBytes(message);
             tcpSocket.Connect(tcpEndPoint);
