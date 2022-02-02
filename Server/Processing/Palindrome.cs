@@ -13,38 +13,22 @@ namespace Server.Processing
     {
         public void Run()
         {
-            
         }
-        
+
         public bool Run(string dataFromClient)
         {
-            StreamReader sr;
-            try
-            {
-                sr = new StreamReader(dataFromClient, Encoding.Default);
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("Файл не найден: {0}", dataFromClient);
-                return false;
-            }
+            dataFromClient = dataFromClient.Replace(" ", "");
 
-            string line;
-            while ((line = sr.ReadLine()) != null)
-            {
-                line = line.Replace(" ", "");
-                
-                char[] chars = line.ToCharArray();
+            char[] chars = dataFromClient.ToCharArray();
 
-                for (int i = 0; i < chars.Length / 2; i++)
+            for (int i = 0; i < chars.Length / 2; i++)
+            {
+                if (Char.ToLower(chars[i]) != Char.ToLower(chars[chars.Length - i - 1]))
                 {
-                    if (Char.ToLower(chars[i]) != Char.ToLower(chars[chars.Length - i - 1]))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
-
+            
             return true;
         }
     }

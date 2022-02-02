@@ -8,9 +8,9 @@ namespace Client
         {
             while (true)
             {
-                Client client = new Client();
-                client.SendRequest(); 
-                client.AcceptAnswerAsync();
+                TCPClient tcpClient = new TCPClient();
+                tcpClient.SendRequest(); 
+                tcpClient.AcceptAnswerAsync();
             }
         }
     }

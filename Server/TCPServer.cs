@@ -3,12 +3,12 @@
     /// <summary>
     /// Класс реализующий серверную часть
     /// </summary>
-    public class Server
+    public class TCPServer
     {
         public TCPConnector TcpConnector { get; set; }
         public TCPListener TcpListener { get; set; }
 
-        public Server()
+        public TCPServer()
         {
             TcpConnector = new TCPConnector();
             TcpListener = new TCPListener();

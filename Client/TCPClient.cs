@@ -5,13 +5,13 @@ namespace Client
     /// <summary>
     /// Класс реализующий клиентскую часть
     /// </summary>
-    public class Client
+    public class TCPClient
     {
         public TCPConnector TcpConnector { get; set; }
         public TCPAcceptor TcpAcceptor { get; set; }
         public TCPRequest TcpRequest { get; set; }
 
-        public Client()
+        public TCPClient()
         {
             TcpConnector = new TCPConnector();
             TcpAcceptor = new TCPAcceptor();
@@ -37,7 +37,7 @@ namespace Client
         /// </summary>
         public void AcceptAnswer()
         {
-            TcpAcceptor.AcceptAnswerFromServer(TcpConnector.tcpSocket);
+            TcpAcceptor.AcceptAnswerFromServer(TcpConnector.tcpSocket, TcpRequest.message);
         }
     }
 }

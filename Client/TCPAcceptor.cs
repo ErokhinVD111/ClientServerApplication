@@ -17,7 +17,7 @@ namespace Client
         /// Метод для принятия и обработки ответа от сервера
         /// </summary>
         /// <param name="tcpSocket"></param>
-        public void AcceptAnswerFromServer(Socket tcpSocket)
+        public void AcceptAnswerFromServer(Socket tcpSocket, string path)
         {
             var buffer = new byte[256];
             int size;
@@ -26,7 +26,7 @@ namespace Client
                 size = tcpSocket.Receive(buffer);
                 answer.Append(Encoding.UTF8.GetString(buffer, 0, size));
             } while (tcpSocket.Available > 0);
-            PrintAnswer(answer);
+            PrintAnswer(answer, path);
             tcpSocket.Shutdown(SocketShutdown.Both);
             tcpSocket.Close();
         }
@@ -34,9 +34,9 @@ namespace Client
         /// Метод для вывода на консоль ответа от сервера
         /// </summary>
         /// <param name="message"></param>
-        public void PrintAnswer(StringBuilder message)
+        public void PrintAnswer(StringBuilder message, string path)
         {
-            Console.WriteLine("Ответ от сервера: {0}", message);
+            Console.WriteLine("Ответ от сервера: {0} - {1}", path, message);
         }
     }
 }

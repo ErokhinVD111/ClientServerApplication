@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Client
     /// </summary>
     public class TCPRequest
     {
+        public string message;
+        
         /// <summary>
         /// Метод реализующий отправку запроса на сервер
         /// </summary>
@@ -18,10 +21,28 @@ namespace Client
         public void SendRequestToServer(Socket tcpSocket, IPEndPoint tcpEndPoint)
         {
             Console.WriteLine("Введите путь до файла:");
-            var message = Console.ReadLine();
-            var data = Encoding.UTF8.GetBytes(message);
-            tcpSocket.Connect(tcpEndPoint);
-            tcpSocket.Send(data);
+            message = Console.ReadLine();
+            StreamReader sr = null;
+            bool isCreate = true;
+            try
+            {
+                sr = new StreamReader(message, Encoding.Default);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Файл не найден: {0}", message);
+                isCreate = false;
+            }
+
+            if (isCreate)
+            {
+                string line;
+                line = sr.ReadLine();
+                Console.WriteLine(line);
+                var data = Encoding.UTF8.GetBytes(line);
+                tcpSocket.Connect(tcpEndPoint);
+                tcpSocket.Send(data);
+            }
         }
     }
 }

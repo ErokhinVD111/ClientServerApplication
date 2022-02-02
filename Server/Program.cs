@@ -6,8 +6,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Server server = new Server();
-            server.Run();
+            TCPServer tcpServer = new TCPServer();
+            tcpServer.Run();
         }
     }
 }
