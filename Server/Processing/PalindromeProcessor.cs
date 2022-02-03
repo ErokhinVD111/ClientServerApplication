@@ -8,10 +8,10 @@ namespace Server.Processing
     /// <summary>
     /// Класс реализующий обработчик
     /// </summary>
-    public class Processor : BaseProcessor
+    public class PalindromeProcessor : BaseProcessor
     {
         private bool isPalendrom;
-        public Processor(ITypeProcessing typeProcessing, StringBuilder dataFromClient, int requestMaxCounter) :
+        public PalindromeProcessor(ITypeProcessing typeProcessing, StringBuilder dataFromClient, int requestMaxCounter) :
             base(typeProcessing, dataFromClient, requestMaxCounter)
         {
             
@@ -21,7 +21,7 @@ namespace Server.Processing
         {
             Random random = new Random();
             isPalendrom = _typeProcessing.Run(_dataFromClient.ToString());
-            Thread.Sleep(1000 * random.Next(1, 3));
+            Thread.Sleep(1000 * random.Next(3, 6));
             EndConnection(listener);
         }
 

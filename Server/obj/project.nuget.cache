@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+vDtH4E6Yt/5yFjVn7XmTKOLOECo5X3A3fFIw8yP+riIPC2NLC7nyZJOJMbX2WT/MUoDuXn/iCuwcO3GYeQ1sQ==",
+  "dgSpecHash": "R/bFLWO/kVl/Wc5nYLrDrzkvjeTdyj3D3glo4z7f1HhVfCE4gOetDVMDgRo9ujtC6mwspxEIdK3FGqJmYI0tEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Владимир\\RiderProjects\\ClientServerApplication\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\L1der\\RiderProjects\\ClientServer\\Server\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

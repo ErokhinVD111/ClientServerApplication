@@ -36,7 +36,7 @@ namespace Server
                     size = listener.Receive(buffer);
                     data.Append(Encoding.UTF8.GetString(buffer, 0, size));
                 } while (listener.Available > 0);
-                var processor = new Processor(new Palindrome(), data, _requestCounter.requestMaxCount);
+                var processor = new PalindromeProcessor(new Palindrome(), data, _requestCounter.requestMaxCount);
                 if (_requestCounter.requestCount < _requestCounter.requestMaxCount)
                 {
                     processor.ProcessingAsync(listener, _requestCounter);

@@ -9,15 +9,14 @@ namespace Client
     /// </summary>
     public class TCPAcceptor
     {
-        /// <summary>
-        /// После для ответа от сервера
-        /// </summary>
         public StringBuilder answer = new StringBuilder();
+
         /// <summary>
         /// Метод для принятия и обработки ответа от сервера
         /// </summary>
         /// <param name="tcpSocket"></param>
-        public void AcceptAnswerFromServer(Socket tcpSocket, string path, IteratorFiles iterator)
+        /// <param name="path"></param>
+        public void AcceptAnswerFromServer(Socket tcpSocket, string path)
         {
             var buffer = new byte[256];
             int size;
@@ -26,20 +25,21 @@ namespace Client
                 size = tcpSocket.Receive(buffer);
                 answer.Append(Encoding.UTF8.GetString(buffer, 0, size));
             } while (tcpSocket.Available > 0);
-            PrintAnswer(answer, path, iterator);
+            PrintAnswer(answer, path);
             tcpSocket.Shutdown(SocketShutdown.Both);
             tcpSocket.Close();
         }
+
         /// <summary>
         /// Метод для вывода на консоль ответа от сервера
         /// </summary>
         /// <param name="answerFromServer"></param>
-        public void PrintAnswer(StringBuilder answerFromServer, string path, IteratorFiles iterator)
+        /// <param name="path"></param>
+        public void PrintAnswer(StringBuilder answerFromServer, string path)
         {
             if (!answerFromServer.Equals("Большое количество запросов! Подождите."))
             {
                 Console.WriteLine("Ответ от сервера: {0} - {1}", path, answerFromServer);
-                
             }
             else
             {
