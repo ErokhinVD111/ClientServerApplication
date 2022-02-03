@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Client
 {
@@ -11,38 +12,42 @@ namespace Client
     /// </summary>
     public class TCPRequest
     {
-        public string message;
-        
+        // public string path;
+        // public int _iteratorFiles;
+        // public string[] _allfiles;
+
         /// <summary>
         /// Метод реализующий отправку запроса на сервер
         /// </summary>
         /// <param name="tcpSocket"></param>
         /// <param name="tcpEndPoint"></param>
-        public void SendRequestToServer(Socket tcpSocket, IPEndPoint tcpEndPoint)
+        public void SendRequestAsync(Socket tcpSocket, IPEndPoint tcpEndPoint, IteratorFiles iteratorFiles,
+            string[] _allfiles)
         {
-            Console.WriteLine("Введите путь до файла:");
-            message = Console.ReadLine();
-            StreamReader sr = null;
-            bool isCreate = true;
-            try
-            {
-                sr = new StreamReader(message, Encoding.Default);
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("Файл не найден: {0}", message);
-                isCreate = false;
-            }
+            Console.WriteLine("Выберете файл:");
+            iteratorFiles.Iterator = Convert.ToInt32(Console.ReadLine());
+            StreamReader sr = new StreamReader(_allfiles[iteratorFiles.Iterator], Encoding.UTF8);
+            string line = sr.ReadLine();
+            sr.Close();
+            // Console.WriteLine(_allfiles[iteratorFiles.Iterator]);
+            // Console.WriteLine(line); 
+            var data = Encoding.UTF8.GetBytes(line);
+            tcpSocket.Connect(tcpEndPoint);
+            tcpSocket.Send(data);
 
-            if (isCreate)
-            {
-                string line;
-                line = sr.ReadLine();
-                Console.WriteLine(line);
-                var data = Encoding.UTF8.GetBytes(line);
-                tcpSocket.Connect(tcpEndPoint);
-                tcpSocket.Send(data);
-            }
+
+            #region comments
+
+            //sr = new StreamReader(_allfiles[iteratorFiles.Iterator], Encoding.Default);
+            //string line = sr.ReadLine();
+            //sr.Close();
+            // Console.WriteLine(_allfiles[iteratorFiles.Iterator]);
+            // Console.WriteLine(line);
+            // var data = Encoding.UTF8.GetBytes(line);
+            // tcpSocket.Connect(tcpEndPoint);
+            // tcpSocket.Send(data);
+
+            #endregion
         }
     }
 }

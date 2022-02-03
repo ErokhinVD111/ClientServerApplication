@@ -21,7 +21,7 @@ namespace Server.Processing
         {
             Random random = new Random();
             isPalendrom = _typeProcessing.Run(_dataFromClient.ToString());
-            Thread.Sleep(1000 * random.Next(5, 11));
+            Thread.Sleep(1000 * random.Next(1, 3));
             EndConnection(listener);
         }
 
